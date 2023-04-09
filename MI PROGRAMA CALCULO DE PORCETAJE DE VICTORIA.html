@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+
+<h1> MI PROGRAMA CALCULO DE PORCETAJE DE VICTORIA</h1>
+
+<script>
+	
+	function saltarLinea() {
+		document.write("<br>")
+		document.write("<br>")
+		document.write("<br>")
+	}
+
+	function imprimir(frase) {
+		document.write(frase)
+		saltarLinea()
+	}
+
+	function calculoPorcentaje(partidos,victorias) {
+
+		return (victorias / partidos) * 100;
+
+	}
+
+	var nombre;
+	var partidos;
+	var victorias;
+
+	nombre = prompt("Informe el nombre del equipo");
+	partidos = parseInt(prompt("Informe la cantidad de partidos jugados"));
+	victorias = parseInt(prompt("Informe la cantidad de partidos ganados"));
+
+
+	porcentajeCalculado = calculoPorcentaje(partidos, victorias);
+
+
+	imprimir("El porcentaje de victorias del equipo " + nombre + " es: " + porcentajeCalculado + "%");
+
+
+</script>
