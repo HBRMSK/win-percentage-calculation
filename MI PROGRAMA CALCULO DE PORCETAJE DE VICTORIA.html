@@ -19,7 +19,7 @@
         return (derrotas / partidos) * 100;
     }
 
-    function calculoPuntosTotales(victorias, empates, derrotas) {
+    function calculoPuntosTotales(victorias, empates) {
         return (victorias * 3) + (empates * 1);
     }
 
@@ -40,7 +40,7 @@
     imprimir("Cantidad de victorias: " + victorias);
     imprimir("Cantidad de empates: " + empates);
     imprimir("Cantidad de derrotas: " + derrotas);
-    imprimir("Puntos totales: " + calculoPuntosTotales(victorias, empates, derrotas));
+    imprimir("Puntos totales: " + calculoPuntosTotales(victorias, empates));
 
     imprimir("El porcentaje de victorias del equipo " + nombre + " es: " + calculoPorcentaje(partidos, victorias) + "%");
     imprimir("El porcentaje de empates del equipo " + nombre + " es: " + calculoPorcentaje(partidos, empates) + "%");
