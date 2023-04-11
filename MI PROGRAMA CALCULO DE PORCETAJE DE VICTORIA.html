@@ -1,35 +1,49 @@
 <meta charset="utf-8">
-
-<h1> MI PROGRAMA CALCULO DE PORCETAJE DE VICTORIA</h1>
+<h1>ESTADISTICAS</h1>
 
 <script>
-	
-	function saltarLinea() {
-		document.write("<br>")
-		document.write("<br>")
-		document.write("<br>")
-	}
+    function saltarLinea() {
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+    }
 
-	function imprimir(frase) {
-		document.write(frase)
-		saltarLinea()
-	}
+    function imprimir(frase) {
+        document.write(frase)
+        saltarLinea()
+    }
 
-	function calculoPorcentaje(partidos,victorias) {
+    function calculoPorcentaje(partidos, victorias, empates, derrotas) {
+        return (victorias / partidos) * 100;
+        return (empates / partidos) * 100;
+        return (derrotas / partidos) * 100;
+    }
 
-		return (victorias / partidos) * 100;
+    function calculoPuntosTotales(victorias, empates, derrotas) {
+        return (victorias * 3) + (empates * 1);
+    }
 
-	}
+    var nombre;
+    var partidos;
+    var victorias;
+    var empates;
+    var derrotas;
 
-	var nombre;
-	var partidos;
-	var victorias;
+    nombre = prompt("Informe el nombre del equipo");
+    partidos = parseInt(prompt("Informe la cantidad de partidos jugados"));
+    victorias = parseInt(prompt("Informe la cantidad de partidos ganados"));
+    empates = parseInt(prompt("Informe la cantidad de partidos empatados"));
+    derrotas = parseInt(prompt("Informe la cantidad de partidos perdidos"));
 
-	nombre = prompt("Informe el nombre del equipo");
-	partidos = parseInt(prompt("Informe la cantidad de partidos jugados"));
-	victorias = parseInt(prompt("Informe la cantidad de partidos ganados"));
+    imprimir("Estadisticas del: " + nombre.link("https://es.wikipedia.org/wiki/Real_Madrid_Club_de_F%C3%BAtbol"));
+    imprimir("Cantidad de partidos jugados: " + partidos);
+    imprimir("Cantidad de victorias: " + victorias);
+    imprimir("Cantidad de empates: " + empates);
+    imprimir("Cantidad de derrotas: " + derrotas);
+    imprimir("Puntos totales: " + calculoPuntosTotales(victorias, empates, derrotas));
 
-	imprimir("El porcentaje de victorias del equipo " + nombre + " es: " + calculoPorcentaje(partidos,victorias) + "%");
-
+    imprimir("El porcentaje de victorias del equipo " + nombre + " es: " + calculoPorcentaje(partidos, victorias) + "%");
+    imprimir("El porcentaje de empates del equipo " + nombre + " es: " + calculoPorcentaje(partidos, empates) + "%");
+    imprimir("El porcentaje de derrotas del equipo " + nombre + " es: " + calculoPorcentaje(partidos, derrotas) + "%");
 
 </script>
